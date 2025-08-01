@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Login - FundUp Intern Portal</title>
+
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
+  
+  <!-- Google Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron&display=swap" rel="stylesheet" />
+
+  <!-- Custom Styles -->
+  <style>
+   /* Base body font for forms, paragraphs, etc. */
+/* Default: Roboto for body text */
+body {
+  font-family: 'Roboto', sans-serif;
+  background-color: #121212;
+  color: white;
+}
+
+/* Orbitron for navbar + headings only */
+.navbar-brand,
+.navbar-nav .nav-link,
+.dropdown-menu .dropdown-item,
+h1, h2, h3, .orbitron {
+  font-family: 'Orbitron', sans-serif;
+}
+ .form-container {
+      max-width: 400px;
+      margin: 80px auto;
+      background-color: #1e1e1e;
+      padding: 30px;
+      border-radius: 10px;
+      box-shadow: 0 0 10px #00000088;
+    }
+
+    .form-container h2 {
+      font-family: 'Orbitron', sans-serif;
+      margin-bottom: 25px;
+      text-align: center;
+      color: #0dcaf0;
+    }
+
+    .form-control {
+      background-color: #2b2b2b;
+      color: white;
+      border: none;
+    }
+
+    .form-control:focus {
+      background-color: #2b2b2b;
+      color: white;
+      border-color: #0dcaf0;
+      box-shadow: none;
+    }
+
+    .btn-login {
+      background-color: #0dcaf0;
+      border: none;
+    }
+
+    .btn-login:hover {
+      background-color: #0bb1d6;
+    }
+
+    .form-footer {
+      text-align: center;
+      margin-top: 15px;
+    }
+
+    .form-footer a {
+      color: #0dcaf0;
+      text-decoration: none;
+    }
+
+    .form-footer a:hover {
+      text-decoration: underline;
+    }
+
+
+
+    header {
+      background-color: #0d1117;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.6);
+      z-index: 1000;
+    }
+
+    .navbar-brand img {
+      height: 40px;
+      margin-right: 10px;
+    }
+
+    .navbar-brand span {
+      font-size: 1.5rem;
+      font-weight: bold;
+    }
+
+    .nav-link {
+      transition: color 0.3s ease;
+    }
+
+    .nav-link:hover {
+      color: #0dcaf0 !important;
+    }
+   footer {
+      background-color: #000;
+      color: #aaa;
+    }
+
+    .btn-primary {
+      background-color: #0dcaf0;
+      border: none;
+    }
+
+    .btn-primary:hover {
+      background-color: #0bbad3;
+    }
+        .nav-item.dropdown:hover .dropdown-menu {
+    display: block;
+    margin-top: 0; /* optional: removes dropdown jump */
+  }
+
+  /* Highlight dropdown items on hover */
+  .dropdown-menu .dropdown-item:hover {
+    background-color: #343a40; /* dark gray hover */
+    color: #0dcaf0 !important; /* yellow text on hover */
+  }
+  .btn-primary {
+  background-color: #0056b3; /* Darker blue on hover */
+}
+.nav-link.btn-primary:hover {
+  color: #fff !important;
+}
+::placeholder {
+  color: #bbb !important;
+  opacity: 1; /* make sure it's fully visible */
+}
+
+/* For Firefox */
+:-moz-placeholder {
+  color: #bbb;
+  opacity: 1;
+}
+
+/* For IE/Edge */
+::-ms-input-placeholder {
+  color: #bbb;
+}
+
+
+  </style>
+</head>
+<body>
+
+  <!-- Header -->
+<header>
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top px-4">
+    <div class="container-fluid">
+      <a class="navbar-brand fw-bold d-flex align-items-center" href="index.html">
+        <img src="images/logo.png" alt="FundUp Logo" class="logo" />
+        FundUp
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto">
+
+          <li class="nav-item">
+            <a class="nav-link active" href="index.html">Home</a>
+          </li>
+
+          <!-- Dashboard with hover dropdown -->
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="dashboard.html" id="dashboardDropdown" role="button">
+              Dashboard
+            </a>
+            <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="dashboardDropdown">
+              <li><a class="dropdown-item" href="internprofile.html">Intern Profile</a></li>
+              <li><a class="dropdown-item" href="certificate.html">Certificate Generator</a></li>
+              <li><a class="dropdown-item" href="faq.html">FAQ</a></li>
+              <li><a class="dropdown-item" href="progressgraph.html">Progress Graph</a></li>
+            </ul>
+          </li>
+
+          <li class="nav-item"><a class="nav-link" href="referrals.html">Referrals</a></li>
+          <li class="nav-item"><a class="nav-link" href="leaderboard.html">Leaderboard</a></li>
+          <li class="nav-item"><a class="nav-link" href="progress.html">Track Progress</a></li>
+          <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+          <li class="nav-item ">
+  <a class="nav-link btn btn-primary btn-active text-white px-2 ms-2" href="signup.html">Sign Up</a>
+</li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+</header>
+
+  <div class="form-container">
+    <h2>Login</h2>
+    <form>
+      <div class="mb-3">
+        <label for="email" class="form-label">Email address</label>
+        <input type="email" class="form-control" id="email" placeholder ="Enter your email" required>
+      </div>
+      <div class="mb-3">
+        <label for="password" class="form-label">Password</label>
+        <input type="password" class="form-control" id="password" placeholder="Enter your password" required>
+      </div>
+      <div class="d-grid">
+        <button type="submit" class="btn btn-login">Login</button>
+      </div>
+    </form>
+    <div class="form-footer">
+      <p>Don't have an account? <a href="signup.html">Sign Up</a></p>
+    </div>
+  </div>
+
+
+
+  <footer class="text-center py-3 border-top border-secondary">
+    <small>&copy; 2025 FundUp. All rights reserved.</small>
+  </footer>
+
+  <!-- Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

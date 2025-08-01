@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Progress Graph - Intern Portal</title>
+<link rel="stylesheet" href="style.css"/>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"/>
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron&display=swap" rel="stylesheet"/>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <style>
+    body {
+      font-family: 'Orbitron', sans-serif;
+      background-color: #0d1117;
+      color: white;
+    }
+
+    header {
+      background-color: #0d1117;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.6);
+      z-index: 1000;
+    }
+
+    .navbar-brand img {
+      height: 40px;
+      margin-right: 10px;
+    }
+
+    .navbar-brand span {
+      font-size: 1.5rem;
+      font-weight: bold;
+    }
+
+    .nav-link {
+      transition: color 0.3s ease;
+    }
+
+    .nav-link:hover {
+      color: #0dcaf0 !important;
+    }
+   footer {
+      background-color: #000;
+      color: #aaa;
+    }
+
+    .btn-primary {
+      background-color: #0dcaf0;
+      border: none;
+    }
+
+    .btn-primary:hover {
+      background-color: #0bbad3;
+    }
+        .nav-item.dropdown:hover .dropdown-menu {
+    display: block;
+    margin-top: 0; /* optional: removes dropdown jump */
+  }
+
+  /* Highlight dropdown items on hover */
+  .dropdown-menu .dropdown-item:hover {
+    background-color: #343a40; /* dark gray hover */
+    color: #0dcaf0 !important; /* yellow text on hover */
+  }
+  .btn-primary {
+  background-color: #0056b3; /* Darker blue on hover */
+}
+.nav-link.btn-primary:hover {
+  color: #fff !important;
+}
+.container {
+      flex: 1;
+      padding-top: 100px;
+    }
+
+    h2 {
+      color: #00ffcc;
+    }
+
+    .chart-container {
+      background-color: #161b22;
+      padding: 20px;
+      border-radius: 12px;
+      box-shadow: 0 0 15px rgba(0, 255, 204, 0.3);
+      margin-top: 30px;
+    }
+
+    canvas {
+      background-color: #0d1117;
+    }
+
+    footer {
+      background-color: #0c0c0c;
+      padding: 15px 0;
+      text-align: center;
+      color: white;
+      border-top: 1px solid #30363d;
+    }
+
+  </style>
+</head>
+<body>
+
+  <!-- Header -->
+<header>
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top px-4">
+    <div class="container-fluid">
+      <a class="navbar-brand fw-bold d-flex align-items-center" href="index.html">
+        <img src="images/logo.png" alt="FundUp Logo" class="logo" />
+        FundUp
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto">
+
+          <li class="nav-item">
+            <a class="nav-link active" href="index.html">Home</a>
+          </li>
+
+          <!-- Dashboard with hover dropdown -->
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="dashboard.html" id="dashboardDropdown" role="button">
+              Dashboard
+            </a>
+            <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="dashboardDropdown">
+              <li><a class="dropdown-item" href="internprofile.html">Intern Profile</a></li>
+              <li><a class="dropdown-item" href="certificate.html">Certificate Generator</a></li>
+              <li><a class="dropdown-item" href="faq.html">FAQ</a></li>
+              <li><a class="dropdown-item" href="progressgraph.html">Progress Graph</a></li>
+            </ul>
+          </li>
+
+          <li class="nav-item"><a class="nav-link" href="referrals.html">Referrals</a></li>
+          <li class="nav-item"><a class="nav-link" href="leaderboard.html">Leaderboard</a></li>
+          <li class="nav-item"><a class="nav-link" href="progress.html">Track Progress</a></li>
+          <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+          <li class="nav-item ">
+  <a class="nav-link btn btn-primary btn-active text-white px-2 ms-2" href="signup.html">Sign Up</a>
+</li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+</header>
+  <div class="container text-center">
+    <h2>📈 Intern Fundraising Progress</h2>
+    <p class="text-light">Visual representation of your weekly contribution</p>
+
+    <div class="chart-container mt-4">
+      <canvas id="progressChart"></canvas>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer class="text-center py-3 border-top border-secondary">
+    <small>&copy; 2025 FundUp. All rights reserved.</small>
+  </footer>
+
+  <!-- Bootstrap JS -->
+  <script>
+    fetch('header.html')
+      .then(res => res.text())
+      .then(data => document.getElementById('navbar-placeholder').innerHTML = data);
+  </script>
+
+  <!-- Chart Setup -->
+  <script>
+    const ctx = document.getElementById('progressChart').getContext('2d');
+    const progressChart = new Chart(ctx, {
+      type: 'bar',
+      data: {
+        labels: ['Week 1', 'Week 2', 'Week 3', 'Week 4'],
+        datasets: [{
+          label: 'Funds Raised (PKR)',
+          data: [2500, 3800, 6100, 8000],
+          backgroundColor: '#00ffcc',
+          borderColor: '#00ffcc',
+          borderWidth: 2,
+          borderRadius: 6,
+        }]
+      },
+      options: {
+        responsive: true,
+        scales: {
+          y: {
+            beginAtZero: true,
+            grid: { color: '#30363d' }
+          },
+          x: {
+            grid: { color: '#30363d' }
+          }
+        },
+        plugins: {
+          legend: {
+            labels: { color: 'white' }
+          }
+        }
+      }
+    });
+  </script>
+
+</body>
+</html>

@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>FAQs - Intern Portal</title>
+
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"/>
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron&display=swap" rel="stylesheet"/>
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-..." crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+
+  <style>
+    body {
+      font-family: 'Orbitron', sans-serif;
+      background-color: #0d1117;
+      color: #ffffff;
+    }
+
+    header {
+      background-color: #0d1117;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.6);
+    }
+
+    .navbar-brand img {
+      height: 40px;
+      margin-right: 10px;
+    }
+
+    .nav-link:hover {
+      color: #0dcaf0 !important;
+    }
+
+    .nav-item.dropdown:hover .dropdown-menu {
+      display: block;
+      margin-top: 0;
+    }
+
+    .dropdown-menu .dropdown-item:hover {
+      background-color: #343a40;
+      color: #0dcaf0 !important;
+    }
+
+
+
+       .btn-outline-primary,
+    .btn-outline-secondary {
+      color: #0dcaf0;
+      border-color: #0dcaf0;
+    }
+
+    .btn-outline-primary:hover,
+    .btn-outline-secondary:hover {
+      background-color: #0dcaf0;
+      color: #000;
+    }
+      .btn-primary {
+  background-color: #0056b3; /* Darker blue on hover */
+}
+.nav-link.btn-primary:hover {
+  color: #fff !important;
+}
+
+    footer {
+      background-color: #000;
+      color: #aaa;
+      text-align: center;
+      padding: 15px 0;
+      margin-top: 50px;
+    }
+
+
+    .Content {
+      flex: 1;
+      padding: 40px 20px;
+      margin-top: 60px;
+    }
+    .faq-item {
+      background-color: #161b22;
+      border: 1px solid #30363d;
+      padding: 20px;
+      border-radius: 10px;
+      margin-bottom: 20px;
+      transition: all 0.3s ease;
+    }
+
+    .faq-item:hover {
+      border-color: #00ffcc;
+    }
+
+    .faq-question {
+      font-weight: bold;
+      color: #00ffcc;
+    }
+
+    .faq-answer {
+      margin-top: 10px;
+    }
+      </style>
+</head>
+
+<body>
+  <!-- Header -->
+  <header>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top px-4">
+      <div class="container-fluid">
+        <a class="navbar-brand fw-bold d-flex align-items-center" href="index.html">
+          <img src="images/logo.png" alt="FundUp Logo" />
+          FundUp
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav ms-auto">
+            <li class="nav-item"><a class="nav-link active" href="index.html">Home</a></li>
+
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="dashboard.html" id="dashboardDropdown" role="button">
+                Dashboard
+              </a>
+              <ul class="dropdown-menu dropdown-menu-dark">
+                <li><a class="dropdown-item" href="internprofile.html">Intern Profile</a></li>
+                <li><a class="dropdown-item" href="certificate.html">Certificate Generator</a></li>
+                <li><a class="dropdown-item" href="faq.html">FAQ</a></li>
+                <li><a class="dropdown-item" href="progressgraph.html">Progress Graph</a></li>
+              </ul>
+            </li>
+
+            <li class="nav-item"><a class="nav-link" href="referrals.html">Referrals</a></li>
+            <li class="nav-item"><a class="nav-link" href="leaderboard.html">Leaderboard</a></li>
+            <li class="nav-item"><a class="nav-link" href="progress.html">Track Progress</a></li>
+            <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+                      <li class="nav-item ">
+  <a class="nav-link btn btn-primary btn-active text-white px-2 ms-2" href="signup.html">Sign Up</a>
+</li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+<div class="Content container">
+    <h2 class="mb-5 text-center">Frequently Asked Questions</h2>
+
+    <div class="faq-item">
+      <div class="faq-question">💡 What is the goal of this internship?</div>
+      <div class="faq-answer">To build a basic fundraising intern portal and demonstrate your frontend + backend skills.</div>
+    </div>
+
+    <div class="faq-item">
+      <div class="faq-question">🕒 What’s the submission deadline?</div>
+      <div class="faq-answer">5th August 2025 at 11:59 PM (Pakistan time).</div>
+    </div>
+
+    <div class="faq-item">
+      <div class="faq-question">👩‍💻 Do I need real login or signup functionality?</div>
+      <div class="faq-answer">No. Just a dummy login/signup page is required. No authentication is needed.</div>
+    </div>
+
+    <div class="faq-item">
+      <div class="faq-question">📊 Do I need to use a real backend?</div>
+      <div class="faq-answer">No. You can use static JSON or mock APIs to return dummy data.</div>
+    </div>
+
+    <div class="faq-item">
+      <div class="faq-question">📈 Can I add extra features?</div>
+      <div class="faq-answer">Yes! Adding leaderboard, progress graph, certificate generator, etc. can help you stand out.</div>
+    </div>
+
+    <div class="faq-item">
+      <div class="faq-question">🌍 Do I need to host the project?</div>
+      <div class="faq-answer">Yes. Host the frontend on Netlify/Vercel and optionally backend on Render/Cyclic. Or share GitHub repo with screenshots.</div>
+    </div>
+
+    <div class="faq-item">
+      <div class="faq-question">📱 Does the website need to be responsive?</div>
+      <div class="faq-answer">Absolutely! Make sure your pages work well on mobile and desktop.</div>
+    </div>
+
+  </div>
+
+
+
+
+   <footer>
+    &copy; 2025 FundUp. All rights reserved.
+  </footer>
+
+ <script>
+    // Load consistent navbar dynamically if needed
+    fetch('header.html')
+      .then(response => response.text())
+      .then(data => document.getElementById('navbar-placeholder').innerHTML = data);
+  </script>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
