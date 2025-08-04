@@ -11,83 +11,107 @@
   <link href="https://fonts.googleapis.com/css2?family=Orbitron&display=swap" rel="stylesheet" />
   <!-- Custom CSS -->
   <style>
-    body {
-      font-family: 'Orbitron', sans-serif;
-      background-color: #0d1117;
-      color: white;
-    }
+  html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+  }
 
-    header {
-      background-color: #0d1117;
-      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
-      z-index: 1000;
-    }
-    main{
-        height: 520px;
-    }
-
-    .logo {
-      height: 40px;
-      margin-right: 10px;
-    }
-    nav a {
-      transition: color 0.3s ease;
-    }
-
-    nav a:hover {
-      color: #0dcaf0;
-    }
-    .nav-link:hover {
-      color: #0dcaf0 !important;
-    }
-
-    .leaderboard-container {
-      max-width: 900px;
-      margin: auto;
-      padding: 90px 20px;
-    }
-.heading{
-    background-color: #0056b3 ; 
-         color: #ffffff;
+  body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    font-family: 'Orbitron', sans-serif;
+    background-color: #0d1117;
+    color: white;
+  }
+  .heading {
+  background-color: #0056b3;
+  color: #ffffff;
 }
-    .table thead {
-        background-color: #0056b3 ; 
-         color: #ffffff;
-    }
 
-    .table tbody tr:nth-child(1) {
-      background-color: #2c3e50;
-    }
 
-    .table tbody tr:nth-child(2) {
-      background-color: #34495e;
-    }
+  header {
+    background-color: #0d1117;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
+    z-index: 1000;
+  }
 
-    .table tbody tr:nth-child(3) {
-      background-color: #3b4c63;
-    }
-     .nav-item.dropdown:hover .dropdown-menu {
+  .logo {
+    height: 40px;
+    margin-right: 10px;
+  }
+
+  nav a {
+    transition: color 0.3s ease;
+  }
+
+  nav a:hover, .nav-link:hover {
+    color: #0dcaf0 !important;
+  }
+
+  main {
+    flex: 1;
+    padding-top: 80px;
+    padding-bottom: 40px;
+  }
+
+  .leaderboard-container {
+    max-width: 1000px;
+    margin: auto;
+    padding: 80px 20px;
+  }
+
+  .table {
+    font-size: 1.1rem;
+  }
+
+  .table th, .table td {
+    padding: 1rem 1.5rem;
+  }
+
+  .table thead {
+    background-color: #0056b3;
+    color: #ffffff;
+  }
+
+  .table tbody tr:nth-child(1) {
+    background-color: #2c3e50;
+  }
+
+  .table tbody tr:nth-child(2) {
+    background-color: #34495e;
+  }
+
+  .table tbody tr:nth-child(3) {
+    background-color: #3b4c63;
+  }
+
+  .dropdown:hover .dropdown-menu {
     display: block;
-    margin-top: 0; /* optional: removes dropdown jump */
+    margin-top: 0;
   }
 
-  /* Highlight dropdown items on hover */
   .dropdown-menu .dropdown-item:hover {
-    background-color: #343a40; /* dark gray hover */
-    color: #0dcaf0 !important; /* yellow text on hover */
+    background-color: #343a40;
+    color: #0dcaf0 !important;
   }
-    .btn-primary {
-  background-color: #0056b3; /* Darker blue on hover */
-}
-.nav-link.btn-primary:hover {
-  color: #fff !important;
-}
 
-    footer {
-      background-color: #000;
-       color: #aaa;
-    }
-  </style>
+  .btn-primary {
+    background-color: #0056b3;
+  }
+
+  .nav-link.btn-primary:hover {
+    color: #fff !important;
+  }
+
+  footer {
+    background-color: #000;
+    color: #aaa;
+    padding-top: 1rem;
+  }
+</style>
+
 </head>
 <body>
 
@@ -143,8 +167,7 @@
     <h2 class="text-center mb-4">Top Interns Leaderboard</h2>
     <div class="table-responsive">
       <table class="table table-dark table-bordered table-hover text-center">
-        <div class="heading">
-        <thead>
+        <thead class="heading">
           <tr>
             <th>Rank</th>
             <th>Intern Name</th>
